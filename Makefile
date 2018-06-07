@@ -7,7 +7,7 @@ build:
 
 install:
 	which wtf | xargs rm || true
-	go install -ldflags="-X main.version=$(shell git describe --always --abbrev=6)_$(BRANCH) -X main.date=$(shell date +%FT%T%z)"
+	go install -ldflags="-X main.version=$(git describe --always --abbrev=6)_${BRANCH} -X main.date=$(date +%FT%T%z)"
 	which wtf
 
 run: build
